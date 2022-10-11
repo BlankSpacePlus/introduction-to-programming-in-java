@@ -8,3 +8,9 @@
 - Assignment 2
     - [\[PDF\]](./assignments/assignment2.pdf)
     - [\[CODE\]](./src/com/mit/intro/assign2)
+- Assignment 3
+  - [\[PDF\]](./assignments/assignment3.pdf)
+  - [\[CODE\]](./src/com/mit/intro/assign3)
+- Assignment 4
+  - [\[PDF\]](./assignments/assignment4.pdf)
+  - [\[CODE\]](./src/com/mit/intro/assign4)

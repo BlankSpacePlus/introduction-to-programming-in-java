@@ -14,3 +14,6 @@
 - Assignment 4
   - [\[PDF\]](./assignments/assignment4.pdf)
   - [\[CODE\]](./src/com/mit/intro/assign4)
+- Assignment 5
+  - [\[PDF\]](./assignments/assignment5.pdf)
+  - [\[CODE\]](./src/com/mit/intro/assign5)

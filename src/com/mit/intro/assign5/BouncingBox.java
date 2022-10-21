@@ -39,11 +39,9 @@ public class BouncingBox {
         // We check the direction because if a box is placed near the wall, we would get "stuck" rather than moving in the right direction
         if ((this.x <= 0 && this.xDirection < 0) || (this.x + SIZE >= SimpleDraw.WIDTH && this.xDirection > 0)) {
             this.xDirection = -this.xDirection;
-            System.out.println(xDirection);
         }
         if ((this.y <= 0 && this.yDirection < 0) || (this.y + SIZE >= SimpleDraw.HEIGHT && this.yDirection > 0)) {
             this.yDirection = -this.yDirection;
-            System.out.println(yDirection);
         }
     }
 

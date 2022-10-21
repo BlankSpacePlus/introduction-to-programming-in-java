@@ -26,6 +26,7 @@ public class Bouncer implements Mover {
     /**
      * Starts moving the object in the direction (xIncrement, yIncrement).
      */
+    @Override
     public void setMovementVector(int xIncrement, int yIncrement) {
         this.xDirection = xIncrement;
         this.yDirection = yIncrement;

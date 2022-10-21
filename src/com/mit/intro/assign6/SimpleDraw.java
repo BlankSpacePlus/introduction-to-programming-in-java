@@ -40,21 +40,21 @@ public class SimpleDraw extends JPanel implements Runnable {
         // Enable anti-aliasing for better looking graphics 
         Graphics2D g2 = (Graphics2D) g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        draw.draw(g2);
+        this.draw.draw(g2);
     }
 
     /**
      * Enables periodic repaint calls.
      */
     public synchronized void start() {
-        animate = true;
+        this.animate = true;
     }
 
     /**
      * Pauses animation.
      */
     public synchronized void stop() {
-        animate = false;
+        this.animate = false;
     }
 
     private synchronized boolean animationEnabled() {

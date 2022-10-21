@@ -32,31 +32,43 @@ public class BouncingBox {
      * Draws the box at its current position on to surface.
      */
     public void draw(Graphics surface) {
-        // Draw the object
-        surface.setColor(this.color);
-        surface.fillRect(this.x - SIZE / 2, this.y - SIZE / 2, SIZE, SIZE);
-        surface.setColor(Color.BLACK);
-        ((Graphics2D) surface).setStroke(new BasicStroke(3.0f));
-        surface.drawRect(this.x - SIZE / 2, this.y - SIZE / 2, SIZE, SIZE);
-        surface.setColor(Color.GREEN);
-        surface.fillArc(this.x - SIZE * 2, this.y + SIZE * 2, SIZE * 3, SIZE * 2, 30, 80);
-        surface.setColor(Color.MAGENTA);
-        surface.fillRoundRect(this.x - SIZE * 7, this.y + SIZE * 6, SIZE * 3, SIZE * 3 / 2, 10, 45);
         // Move the center of the object each time we draw it
-        this.x += xDirection;
-        this.y += yDirection;
+        this.x += this.xDirection;
+        this.y += this.yDirection;
         // If we have hit the edge and are moving in the wrong direction, reverse direction
         // We check the direction because if a box is placed near the wall, we would get "stuck" rather than moving in the right direction
-        if ((this.x - SIZE / 2 <= 0 && this.xDirection < 0) || (this.x + SIZE / 2 >= SimpleDraw.WIDTH && this.xDirection > 0)) {
+        if ((this.x <= 0 && this.xDirection < 0) || (this.x + SIZE >= SimpleDraw.WIDTH && this.xDirection > 0)) {
             this.xDirection = -this.xDirection;
+            System.out.println(xDirection);
         }
-        if ((this.y - SIZE / 2 <= 0 && this.yDirection < 0) || (this.y + SIZE / 2 >= SimpleDraw.HEIGHT && this.yDirection > 0)) {
+        if ((this.y <= 0 && this.yDirection < 0) || (this.y + SIZE >= SimpleDraw.HEIGHT && this.yDirection > 0)) {
             this.yDirection = -this.yDirection;
+            System.out.println(yDirection);
         }
-        surface.setColor(Color.PINK);
-        surface.fillOval(this.x + SIZE, this.y + SIZE, SIZE * 3 / 2, SIZE);
-        surface.setColor(Color.BLACK);
-        surface.drawOval(this.x + SIZE, this.y + SIZE, SIZE * 3 / 2, SIZE);
+    }
+
+    public void drawRec(Graphics surface) {
+        surface.setColor(this.color);
+        surface.fillRect(this.x, this.y, SIZE, SIZE);
+        this.draw(surface);
+    }
+
+    public void drawOval(Graphics surface) {
+        surface.setColor(this.color);
+        surface.fillOval(this.x, this.y, SIZE, SIZE);
+        this.draw(surface);
+    }
+
+    public void drawRoundRect(Graphics surface) {
+        surface.setColor(this.color);
+        surface.fillRoundRect(this.x, this.y, SIZE, SIZE, 10, 45);
+        this.draw(surface);
+    }
+
+    public void drawArc(Graphics surface) {
+        surface.setColor(this.color);
+        surface.fillArc(this.x, this.y, SIZE, SIZE, 30, 80);
+        this.draw(surface);
     }
 
     public void setMovementVector(int xIncrement, int yIncrement) {
